@@ -47,3 +47,18 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    var audio = document.getElementById('audio');
+    
+    // Fungsi untuk memainkan audio secara otomatis
+    function playAudio() {
+      audio.play();
+      // Hapus event listener agar audio tidak diputar berulang kali
+      document.removeEventListener('click', playAudio);
+    }
+    
+    // Event listener untuk memainkan audio ketika halaman dimuat sepenuhnya
+    document.addEventListener('click', playAudio);
+  });
+  
